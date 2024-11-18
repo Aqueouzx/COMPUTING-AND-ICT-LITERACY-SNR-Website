@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+.dummy{
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+.dummy{
+    font-family: "Sarabun", sans-serif;
+}
+
+
+:root{
+    --rose_ebony : #5E454A;
+    --space_cadest : #252945;
+    --rich_black : #11121D;
+    --lavender : #DBDDE7;
+    --marian_blue : #2C3E7A;
+    --english_violet : #3F323F;
+    --lion : #a88e5a;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Noto Sans Thai", sans-serif;
+    background-color: var(--rich_black);
+    background-size: cover;
+   
+}
+
+.main-container{
+    padding: 0 15%;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    
+}
+
+.hero-text{
+    color: var(--lion);
+    font-family: "Noto Sans Thai", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+table{
+    border-spacing: 30px;
+    color: var(--lavender);
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+table th{
+    padding: 8px;
+    font-size: 22px;
+    text-align: center;
+}
+
+table td{
+    padding: 6px;
+    font-size: 16px;
+    text-align: center;
+}
+
+a.btn{
+    background-color: #6e8db8;
+    color: var(--lavender);
+    padding: 16px 48px;
+    display: inline-block;
+    border-radius: 8px;
+    border: 1px solid var(--lavender)
+}
+a.btn:hover{
+    background-color: var(--lavender);
+    color: #6e8db8;
+    border: 1px solid #6e8db8;
+}
+
+p.subtitle1{
+    margin-top: 30px;
+    color: var(--lavender);
+}
+
+.text-bottom{
+    text-align: center;
+}
+
+p.subtitle2{
+    margin-top: 15px;
+    color: var(--lavender);
+    margin-bottom: 50px;
+}
+
+table.mobile-table{
+    display: none;
+}  
+
+
+@media only screen and (max-width: 600px){
+    table.mobile-table{
+        display: none;
+    }  
+    .main-container{
+        width: 100%;
+        padding: 0;
+    }
+    .hero-text{
+        padding: 0 10%;
+        margin-top: 10%;
+        text-align: center;
+        width: 100%;
+        font-size: 17px;
+        margin-bottom: 5%;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 30px;
+        color: var(--lavender);
+        padding: 10px;
+        margin: 0 auto;
+        text-align: center;  
+    }
+
+    table th{
+        font-size: 17px;
+    }
+
+    table th{
+        font-size: 17px;
+        text-align: center;
+    }
+
+    table td{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    a.btn{
+        margin-top: 5%;
+    }
+
+    p.subtitle1{
+        padding: 0 3%;
+    }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ปฏทิน.css">
+    <title>ปฏิทิน</title>
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <div class="logo">
+                <img src="SNR logo.png" width="80px" alt="logo">
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html">หน้าแรก</a>
+                </li>
+
+                <li>
+                    <a href="กิจกรรม.html">กิจกรรม</a>
+                </li>
+
+                <li>
+                    <a  href="คุณสมบัติ.html">คุณสมบัติ</a>
+                </li>
+
+                <li>
+                    <a class="active" href="ปฏิทิน.html">ปฏิทิน</a>
+                </li>
+
+                <!--<li>
+                    <a href="#">ลงเวลาเรียน</a>
+                </li>
+
+                <li>
+                    <a href="#">สื่อการสอน</a>
+                </li>-->
+
+                <li>
+                    <a class="btn light" href="/ช่องทางติดต่อ.html">ช่องทางติดต่อ</a>
+                </li>     
+            </ul>
+                <div class="banner">
+                    ปิดรับสมัครแล้ว
+                </div>
+
+                <div class="mobile-menu active">
+                    <img src="menu.svg" alt="nav-icon">
+                </div>
+                <div class="mobile-close">
+                    <img src="close.svg" alt="nav-icon">
+                </div>
+            
+                <nav class="mobile-navigation">
+                    <ul>
+                        <li>
+                            <a href="index.html">หน้าแรก</a>
+                        </li>
+
+                        <li>
+                            <a href="กิจกรรม.html">กิจกรรม</a>
+                        </li>
+
+                        <li>
+                            <a href="เงื่อนไข.html">คุณสมบัติ</a>
+                        </li>
+
+                        <li>
+                            <a class="active" href="ปฏิทิน.html">ปฏิทิน</a>
+                        </li>
+
+                        <!--<li>
+                            <a href="#">ลงเวลาเรียน</a>
+                        </l>
+
+                        <li>
+                            <a href="#">สื่อการสอน</a>
+                        </li>-->
+
+                        <li>
+                            <a class="btn light" href="/ช่องทางติดต่อ.html">ช่องทางติดต่อ</a>
+                        </li>     
+                    </ul>
+                </nav>
+        </nav>
+
+
+        <div class="heading">
+            <h1>TIMELINE</h1>
+        </div>
+
+        <div class="slider">
+            <div class="image fade">
+                <img src="june.jpg" width="100%" class="active">
+                <img src="july.jpg" width="100%" >
+                <img src="august.jpg" width="100%">
+                <img src="september.jpg" width="100%">
+                <img src="november.jpg" width="100%">
+                <img src="december.jpg" width="100%">
+                <img src="january.jpg" width="100%">
+                <img src="february.jpg" width="100%">
+            </div>
+
+            <div class="button">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+
+            <div class="dots">
+                <div class="dot active" attr='0'></div>
+                <div class="dot" attr='1'></div>
+                <div class="dot" attr='2'></div>
+                <div class="dot" attr='3'></div>
+                <div class="dot" attr='4'></div>
+                <div class="dot" attr='5'></div>
+                <div class="dot" attr='6'></div>
+                <div class="dot" attr='7'></div>
+            </div>
+
+        </div>
+          
+        
+    <script > 
+    const mobileMenu = document.querySelector(".mobile-menu")
+    const mobileClose = document.querySelector(".mobile-close")
+    const mobileNavigation = document.querySelector(".mobile-navigation")
+
+    mobileMenu.addEventListener("click" , () => {
+        mobileNavigation.classList.add("active");
+        mobileClose.classList.add("active");
+    })
+
+    mobileClose.addEventListener("click" , () => {
+        mobileNavigation.classList.remove("active");
+        mobileClose.classList.remove("active");
+    })
+   let images = document.querySelectorAll('.slider .image img');
+   let dots = document.querySelectorAll('.dots .dot');
+   let prevButton = document.querySelector('.prev');
+   let nextButton = document.querySelector('.next');
+
+   let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach(img => img.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        images[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+
+  
+    nextButton.addEventListener('click', function() {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0; 
+        }
+    showImage(currentIndex);
+    });
+
+   
+    prevButton.addEventListener('click', function() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1; 
+        }
+    showImage(currentIndex);
+    });
+
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            currentIndex = index;
+            showImage(currentIndex);
+        });
+    });
+
+    showImage(currentIndex);
+
+    
+    </script>
+</body>
+</html>
